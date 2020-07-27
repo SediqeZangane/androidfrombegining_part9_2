@@ -43,6 +43,7 @@ public class Part9_2Activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == setImageRequestCode && resultCode == RESULT_OK) {
             img_set.setImageURI(data.getData());
+
         }
     }
 }
