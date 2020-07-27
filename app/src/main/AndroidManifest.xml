@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Part10_Activity"/>
         <activity android:name=".Part9_1Activity" />
         <activity android:name=".Part9_2Activity" />
         <activity android:name=".Part9Activity">
@@ -27,6 +28,7 @@
         <activity android:name=".part8" />
         <activity android:name=".part8_1" />
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
