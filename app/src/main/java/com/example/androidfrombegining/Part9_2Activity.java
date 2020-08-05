@@ -25,6 +25,13 @@ public class Part9_2Activity extends AppCompatActivity {
     }
 
     private void Control() {
+//        intent part 14
+        Intent getInfoPart14=getIntent();
+        int res_id=getInfoPart14.getIntExtra("resID",R.drawable.sedi);
+        img_set.setImageResource(res_id);
+
+
+
         img_set.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
