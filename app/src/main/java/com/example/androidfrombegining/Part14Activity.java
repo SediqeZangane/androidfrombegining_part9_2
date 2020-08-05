@@ -24,7 +24,7 @@ public class Part14Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_part14);
         models = new ArrayList<>();
-        models.add(new Part13UserModel("sediqe", "zangane", R.mipmap.ic_launcher_round, false));
+        models.add(new Part13UserModel("sediqe", "zangane", R.drawable.sedii, false));
         models.add(new Part13UserModel("Abolfazl", "zangane", R.mipmap.ic_launcher, false));
         models.add(new Part13UserModel("mehdi", "shahbazi", R.mipmap.ic_launcher_round, true));
         models.add(new Part13UserModel("sediqe", "zangane", R.mipmap.ic_launcher, false));

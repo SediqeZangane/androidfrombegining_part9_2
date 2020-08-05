@@ -103,6 +103,5 @@ public class Part14MyrecycleAdapter extends RecyclerView.Adapter<Part14Myrecycle
     private void removeItem(int position) {
         models.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeInserted(position, models.size());
     }
 }
