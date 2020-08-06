@@ -15,7 +15,6 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Part14MyrecycleAdapter extends RecyclerView.Adapter<Part14MyrecycleAdapter.myViewHolder> {

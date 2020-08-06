@@ -10,14 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Part20DaftarcheTelephone" />
         <activity android:name=".Part9_1Activity" />
         <activity android:name=".Part9_2Activity" />
         <activity android:name=".Part9Activity" />
         <activity android:name=".Part10_Activity" />
         <activity android:name=".Part12_Activity" />
         <activity android:name=".Part13Activity" />
-        <activity android:name=".Part14Activity">
+        <activity android:name=".Part14Activity" />
+        <activity android:name=".Poroject_Football_League_table_Activity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
