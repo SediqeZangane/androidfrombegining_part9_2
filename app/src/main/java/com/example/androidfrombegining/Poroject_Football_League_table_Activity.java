@@ -23,6 +23,7 @@ public class Poroject_Football_League_table_Activity extends AppCompatActivity {
         dataModels = new ArrayList<>();
         dataModels.add(new Poroject_football_league_table_dataModel(1, R.drawable.ic_baseline_flag_24, "milan", 3, 2, 1, 4, 6));
         dataModels.add(new Poroject_football_league_table_dataModel(2, R.drawable.ic_baseline_flag_24, "inter", 7, 2, 5, 4, 3));
+
         init();
         Control();
     }

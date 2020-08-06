@@ -35,13 +35,13 @@ public class Poroject_football_league_table_Adapter extends RecyclerView.Adapter
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 //        control views
         Poroject_football_league_table_dataModel DATAMODEL = dataModels.get(position);
-        holder.txtRow1.setText(DATAMODEL.getRow());
-        holder.txtTeam1.setText(DATAMODEL.getTeam());
-        holder.txtGame1.setText(DATAMODEL.getGame());
-        holder.txtWin1.setText(DATAMODEL.getWin());
-        holder.txtLose1.setText(DATAMODEL.getLose());
-        holder.txtGoal1.setText(DATAMODEL.getDifferentialOFgoal());
-        holder.txtPoint1.setText(DATAMODEL.getPoint());
+        holder.txtRow1.setText(DATAMODEL.getRow() + "");
+        holder.txtTeam1.setText(DATAMODEL.getTeam() + "");
+        holder.txtGame1.setText(DATAMODEL.getGame() + "");
+        holder.txtWin1.setText(DATAMODEL.getWin() + "");
+        holder.txtLose1.setText(DATAMODEL.getLose() + "");
+        holder.txtGoal1.setText(DATAMODEL.getDifferentialOFgoal() + "");
+        holder.txtPoint1.setText(DATAMODEL.getPoint() + "");
 //        holder.txtRow2.setText(DATAMODEL.getRow());
 //        holder.txtTeam2.setText(DATAMODEL.getTeam());
 //        holder.txtGame2.setText(DATAMODEL.getGame());
