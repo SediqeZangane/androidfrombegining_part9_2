@@ -11,7 +11,8 @@ public class androidpart51Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_androidpart51);
+      //  setContentView(R.layout.activity_androidpart51);
+
         Toast.makeText(this,"btnandroidpart51_onCreate",Toast.LENGTH_LONG).show();
         Intent TRANSFER=getIntent();
         person per= (person) TRANSFER.getSerializableExtra("transfer per");

@@ -10,13 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GlideActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ExerciseForRetrofit"/>
+            <activity android:name="Retrofit.RetrofitMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GlideActivity" />
         <activity android:name=".Part20DaftarcheTelephone" />
         <activity android:name=".Part9_1Activity" />
         <activity android:name=".Part9_2Activity" />
@@ -25,8 +28,6 @@
         <activity android:name=".Part12_Activity" />
         <activity android:name=".Part13Activity" />
         <activity android:name=".Part14Activity" />
-        <activity android:name=".ExerciseForRetrofit" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".part6" />
         <activity android:name=".part6_1" />
         <activity android:name=".part7" />
@@ -34,6 +35,10 @@
         <activity android:name=".part8" />
         <activity android:name=".part8_1" />
     </application>
+
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyBCatRMj1dNP5178uf6-rwiKR8vPpqCQ_8" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
