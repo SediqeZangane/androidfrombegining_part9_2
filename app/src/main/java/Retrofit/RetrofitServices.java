@@ -7,5 +7,5 @@ import retrofit2.http.GET;
 
 public interface RetrofitServices {
     @GET("employees")
-    Call<List<ClassEmployees>> getEmployees();
+    Call<List<Example>> getEmployees();
 }

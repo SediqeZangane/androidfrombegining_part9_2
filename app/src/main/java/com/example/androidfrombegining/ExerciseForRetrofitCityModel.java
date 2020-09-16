@@ -11,3 +11,4 @@ public class ExerciseForRetrofitCityModel {
         return name;
     }
 }
+

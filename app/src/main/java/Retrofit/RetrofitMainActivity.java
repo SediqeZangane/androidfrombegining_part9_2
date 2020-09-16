@@ -8,9 +8,11 @@ import retrofit2.Retrofit;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.androidfrombegining.ExerciseForRetrofit;
 import com.example.androidfrombegining.R;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class RetrofitMainActivity extends AppCompatActivity {
         btnGetEmployes = findViewById(R.id.get_employes);
         btnCreateNewEmployes = findViewById(R.id.create_new);
         btnGetPosts = findViewById(R.id.get_post);
-
+        GetEmployes();
     }
 
     public void GetEmployes() {
@@ -35,23 +37,23 @@ public class RetrofitMainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Retrofit retrofitClient = RetrofitClient.initialize();
                 RetrofitServices services = retrofitClient.create(RetrofitServices.class);
-                Call<List<ClassEmployees>> getEmp = services.getEmployees();
-                getEmp.enqueue(new Callback<List<ClassEmployees>>() {
+                Call<List<Example>> getEmp = services.getEmployees();
+                getEmp.enqueue(new Callback<List<Example>>() {
                     @Override
-                    public void onResponse(Call<List<ClassEmployees>> call, Response<List<ClassEmployees>> response) {
-                        if (response == null)
-                            Toast.makeText(RetrofitMainActivity.this, "Response is null", Toast.LENGTH_SHORT).show();
-                        else {
-                            List<ClassEmployees> ListEmp = response.body();
+                    public void onResponse(Call<List<Example>> call, Response<List<Example>> response) {
+                        if (response == null) {
+                            Toast.makeText(RetrofitMainActivity.this, "is null", Toast.LENGTH_SHORT).show();
+                        } else {
+                            List<Example> list = response.body();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<List<ClassEmployees>> call, Throwable t) {
-                        Toast.makeText(RetrofitMainActivity.this, "Error!!!", Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<List<Example>> call, Throwable t) {
+                        Toast.makeText(RetrofitMainActivity.this,"Error!!!!!!!",Toast.LENGTH_SHORT).show();
+
                     }
                 });
-
             }
         });
     }
