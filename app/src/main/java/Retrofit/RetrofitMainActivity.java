@@ -29,7 +29,9 @@ public class RetrofitMainActivity extends AppCompatActivity {
         btnCreateNewEmployes = findViewById(R.id.create_new);
         btnGetPosts = findViewById(R.id.get_post);
         GetEmployes();
+        CreateNewEmployes();
     }
+
 
     public void GetEmployes() {
         btnGetEmployes.setOnClickListener(new View.OnClickListener() {
@@ -37,20 +39,20 @@ public class RetrofitMainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Retrofit retrofitClient = RetrofitClient.initialize();
                 RetrofitServices services = retrofitClient.create(RetrofitServices.class);
-                Call<List<Example>> getEmp = services.getEmployees();
-                getEmp.enqueue(new Callback<List<Example>>() {
+                Call<Example> getEmp = services.getEmployees();
+                getEmp.enqueue(new Callback<Example>() {
                     @Override
-                    public void onResponse(Call<List<Example>> call, Response<List<Example>> response) {
+                    public void onResponse(Call<Example> call, Response<Example> response) {
                         if (response == null) {
                             Toast.makeText(RetrofitMainActivity.this, "is null", Toast.LENGTH_SHORT).show();
                         } else {
-                            List<Example> list = response.body();
+                            Example example = response.body();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<List<Example>> call, Throwable t) {
-                        Toast.makeText(RetrofitMainActivity.this,"Error!!!!!!!",Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<Example> call, Throwable t) {
+                        Toast.makeText(RetrofitMainActivity.this, "Error!!!!!!!", Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -59,8 +61,31 @@ public class RetrofitMainActivity extends AppCompatActivity {
     }
 
     public void CreateNewEmployes() {
-        btnCreateNewEmployes.setOnClickListener(v -> {
+        btnCreateNewEmployes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Retrofit retrofitClient = RetrofitClient.initialize();
+                RetrofitServices services = retrofitClient.create(RetrofitServices.class);
+                CreateData createData = new CreateData("ali", "1000", "20", null);
+                Call<CreateData> newEmployee = services.create(createData);
+                newEmployee.enqueue(new Callback<CreateData>() {
+                    @Override
+                    public void onResponse(Call<CreateData> call, Response<CreateData> response) {
+                        if (response == null) {
+                            Toast.makeText(RetrofitMainActivity.this, "is null", Toast.LENGTH_SHORT).show();
+                        } else {
+                            CreateData data = response.body();
+                        }
+                    }
 
+
+                    @Override
+                    public void onFailure(Call<CreateData> call, Throwable t) {
+                        Toast.makeText(RetrofitMainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+            }
         });
 
     }
