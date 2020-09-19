@@ -30,6 +30,7 @@ public class RetrofitMainActivity extends AppCompatActivity {
         btnGetPosts = findViewById(R.id.get_post);
         GetEmployes();
         CreateNewEmployes();
+        GetPosts();
     }
 
 
@@ -92,7 +93,26 @@ public class RetrofitMainActivity extends AppCompatActivity {
 
     public void GetPosts() {
         btnGetPosts.setOnClickListener(v -> {
+            Retrofit retrofitClient = RetrofitClientPost.initialize();
+            RetrofitServices services = retrofitClient.create(RetrofitServices.class);
+            Call<List<ClassPost>> getPost = services.getPosts("1");
+            getPost.enqueue(new Callback<List<ClassPost>>() {
+                @Override
+                public void onResponse(Call<List<ClassPost>> call, Response<List<ClassPost>> response) {
+                    if (response == null) {
+                        Toast.makeText(RetrofitMainActivity.this, "is null", Toast.LENGTH_SHORT).show();
+                    } else {
+                        List<ClassPost> classPostList = response.body();
+                    }
+                }
 
+
+                @Override
+                public void onFailure(Call<List<ClassPost>> call, Throwable t) {
+                    Toast.makeText(RetrofitMainActivity.this, "Error!!!!!!!", Toast.LENGTH_SHORT).show();
+
+                }
+            });
         });
     }
 
